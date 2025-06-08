@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:wght@400;600&display=swap');
+
+.riddle-game-container {
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #fffaf5, #fef0e6);
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(163, 92, 59, 0.25);
+  font-family: 'Raleway', sans-serif;
+  color: #5a4232;
+  text-align: center;
+  transition: background-color 0.6s ease;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.riddle-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #a35c3b;
+  margin-bottom: 20px;
+}
+
+.riddle-text {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  color: #6a4e42;
+  transition: opacity 0.6s ease;
+}
+
+.riddle-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.riddle-form input[type="text"] {
+  flex: 1 1 65%;
+  min-width: 220px;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: 2.5px solid #d9b382;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.riddle-form input[type="text"]:focus {
+  border-color: #a35c3b;
+  box-shadow: 0 0 10px rgba(163, 92, 59, 0.3);
+}
+
+.riddle-form button {
+  padding: 14px 26px;
+  background-color: #a35c3b;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(163, 92, 59, 0.3);
+}
+
+.riddle-form button:disabled {
+  background-color: #c7a377;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.riddle-form button:hover:not(:disabled) {
+  background-color: #8b4a2a;
+}
+
+.hint-button {
+  margin-top: 12px;
+  padding: 12px 24px;
+  background-color: #f7d4b3;
+  border: none;
+  border-radius: 8px;
+  color: #5a4232;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hint-button:hover:not(:disabled) {
+  background-color: #d9b382;
+  color: #fff;
+}
+
+.hint-button:disabled {
+  background-color: #f0d9b2;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.riddle-message {
+  margin-top: 24px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #a35c3b;
+  animation: fadeIn 0.5s ease;
+  min-height: 1.5em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.correct {
+  animation: pulse 1.2s ease;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(163, 92, 59, 0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(163, 92, 59, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(163, 92, 59, 0); }
+}

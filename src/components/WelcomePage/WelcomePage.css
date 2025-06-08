@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+
+.welcome-page {
+  /* height: 100vh; */
+  /* padding: 3rem 2rem; */
+  /* background-color: #fdf6e3; beige claro tipo papel */
+  color: #5a4632; /* marrón oscuro suave */
+  font-family: 'Georgia', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* Estado inicial: oculto */
+  opacity: 0;
+}
+
+.welcome-page.visible {
+  /* Cuando visible, hacemos fade in general para que no aparezca de golpe */
+  animation: fadeInPage 1s ease forwards;
+}
+
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+  }
+}
+
+.title,
+.subtitle,
+.text,
+.start-button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-duration: 0.7s;
+}
+
+.welcome-page.visible .title {
+  animation-name: fadeInDown;
+  animation-delay: 0.1s;
+}
+
+.welcome-page.visible .subtitle {
+  animation-name: fadeInDown;
+  animation-delay: 0.4s;
+}
+
+.welcome-page.visible .text {
+  animation-name: fadeInUp;
+  animation-delay: 0.7s;
+}
+
+.welcome-page.visible .start-button {
+  animation-name: fadeInUp;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Títulos */
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 0 8px rgba(90, 70, 50, 0.3);
+}
+
+.subtitle {
+  font-size: 1.7rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #a97855; /* marrón claro */
+}
+
+/* Texto */
+.text {
+  max-width: 600px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/* Botón */
+.start-button {
+  background-color: #d3b185; /* marrón muy claro */
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #5a4632;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(211, 177, 133, 0.6);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.start-button:hover {
+  background-color: #a97855 !important;
+  box-shadow: 0 6px 15px rgba(169, 120, 85, 0.8) !important;
+}
+
+.start-button:active {
+  transform: scale(0.97);
+}

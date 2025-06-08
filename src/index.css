@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap");
+
+:root {
+  /* Tonos principales y secundarios */
+  --primary-color: #7a5c48;      /* --cover-primary */
+  --primary-dark: #3a2e26;       /* --cover-dark */
+  --primary-light: #f0e6d8;      /* --cover-light */
+  --primary-extra-light: #f8f5f0; /* --ivory */
+
+  /* Texto */
+  --text-dark: #3a2e26;           /* --page-text */
+  --text-medium: #7a5c48;         /* --page-accent */
+  --text-light: #9a7b64;          /* --cover-secondary */
+
+  /* Fondo */
+  --bg-color: #f5f0e8;            /* --page-color */
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(58, 46, 34, 0.1);   /* versión más clara de --shadow-color */
+  --shadow-md: 0 4px 6px rgba(58, 46, 34, 0.12);
+  --shadow-lg: 0 10px 25px rgba(58, 46, 34, 0.15);
+
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Colores de acento adicionales (para usar si quieres) */
+  --accent-color: #c0a080;       /* --cover-accent */
+  --gold-color: #d4b483;         /* --cover-gold */
+  --page-gold: #c9a66b;          /* similar a --cover-gold */
+  --wax-red: #a83232;
+  --ink-blue: #1a3657;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: "Merriweather", serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* h2 {
+    font-family: "Merriweather", serif!important;
+} */
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,18 @@
+.app-container {
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  margin: auto;
+}
+
+@media (max-height: 700px) {
+  .app-container {
+    height: 82vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    height: 85vh;
+  }
+}
