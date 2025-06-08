@@ -62,6 +62,7 @@
   margin-top: 16px;
   font-weight: 500;
   color: var(--text-medium);
+  text-align: center;
 }
 
 .next-btn {
